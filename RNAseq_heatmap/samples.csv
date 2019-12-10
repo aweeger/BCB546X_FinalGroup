@@ -1,0 +1,34 @@
+﻿X,stage
+non_rep_bot_1,nonreproductive bottom
+non_rep_bot_2,nonreproductive bottom
+non_rep_bot_3,nonreproductive bottom
+non_rep_mid_1,nonreproductive middle
+non_rep_mid_2,nonreproductive middle
+non_rep_mid_4,nonreproductive middle
+non_rep_mid_5,nonreproductive middle
+non_rep_mid_6,nonreproductive middle
+non_rep_top_1,nonreproductive top
+non_rep_top_2,nonreproductive top
+non_rep_top_3,nonreproductive top
+early_cleavage_1,early cleavage
+early_cleavage_2,early cleavage
+early_postinversion_1,early postinversion
+early_postinversion_2,early postinversion
+early_preinversion_1,early preinversion
+early_preinversion_2,early preinversion
+early_vitellogenesis_1,early vitellogenesis
+early_vitellogenesis_2,early vitellogenesis
+early_vitellogenesis_3,early vitellogenesis
+fertilization_1,ferilization
+fertilization_2,ferilization
+late_cleavage_1,late cleavage
+late_cleavage_2,late cleavage
+late_postinversion_1,late postinversion
+late_preinversion_1,late preinversion
+late_preinversion_2,late preinversion
+late_vitellogenesis_1,late vitellogenesis
+late_vitellogenesis_2,late vitellogenesis
+late_vitellogenesis_3,late vitellogenesis
+late_vitellogenesis_4,late vitellogenesis
+swimming_larvae_1,swimming larvae
+swimming_larvae_2,swimming larvae
