@@ -1,5 +1,5 @@
 # BCB546X_FinalGroup
-This repository holds the materials for the completion for The Eclectic's group project for BCB546X. 
+This repository holds the materials for the completion for The Eclectics group project for BCB546X. 
 
 Our goal was to recreate the findings from Leininger et al. 2014 (see .pdf within).
 

@@ -29,4 +29,7 @@ As for DESeq, we ran into another file formatting issue that was implicitly assu
 When researching if other had solved this issue, we discovered a forum thread (https://www.biostars.org/p/304010/) explaining that this type of analysis is not considered best practice anymore. This thread is less than a year old, much younger than the paper so it is logical that new tools might have changed how this type of analysis is performed. 
 
 At this point, we could not pursue this method any further. We are missing information on key steps of the workflow that allows the RSEM output to be used as input in DESeq, and it does not look like information on how to bridge that gap is readily available. In addition, the published method lacks all advanced parameters that may have been used in either RSEM or DESeq, all of which could influence our results. 
+As it turns out, we needed to create an index in RSEM using Bowtie (paper did not specify which version of bowtie was used, so we assumed most recent, bowtie2). once the index was created, we were able to bridge the conversion gap and input files into DESeq for analysis. 
+
+Once we started running the differential expresion analysis, we also realized that we were missing one of the original fastq file. This is because there was no easy way to batch download the fastq files from the repository, and the short program used to pull these files had an error that prevented import. As a result, we ommited a pair of samples from our analysis. 
 
