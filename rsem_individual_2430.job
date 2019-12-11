@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Copy/paste this job script into a text file and submit with the command:
+#    sbatch thefilename
+# job standard output will go to the file slurm-%j.out (where %j is the job ID)
+
+#SBATCH --time=12:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=16   # 16 processor core(s) per node
+#SBATCH --job-name="2430"
+#SBATCH --mail-user=rfortune@iastate.edu   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+
+module load rsem/1.3.0-py2-r3.5-6w56sc6
+
+module load  python/3.8.0-k7w5uj4
+
+module load  bowtie2/2.3.4.1-py2-jl5zqym
+
+cd /ptmp/aweeger/BCB546X_FinalGroup
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466758_1.fastq RNAseqData_E-MTAB-2430/ERR466758_2.fastq HG973349-HG973421 individual/non_rep_bot_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466765_1.fastq RNAseqData_E-MTAB-2430/ERR466765_2.fastq HG973349-HG973421 individual/non_rep_bot_2
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466766_1.fastq RNAseqData_E-MTAB-2430/ERR466766_2.fastq HG973349-HG973421 individual/non_rep_bot_3
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466760_1.fastq RNAseqData_E-MTAB-2430/ERR466760_2.fastq HG973349-HG973421 individual/non_rep_mid_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466764_1.fastq RNAseqData_E-MTAB-2430/ERR466764_2.fastq HG973349-HG973421 individual/non_rep_mid_2
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466759_1.fastq RNAseqData_E-MTAB-2430/ERR466759_2.fastq HG973349-HG973421 individual/non_rep_mid_3
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466762_1.fastq RNAseqData_E-MTAB-2430/ERR466762_2.fastq HG973349-HG973421 individual/non_rep_mid_4
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466757_1.fastq RNAseqData_E-MTAB-2430/ERR466757_2.fastq HG973349-HG973421 individual/non_rep_mid_5
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466756_1.fastq RNAseqData_E-MTAB-2430/ERR466756_2.fastq HG973349-HG973421 individual/non_rep_mid_6
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466763_1.fastq RNAseqData_E-MTAB-2430/ERR466763_2.fastq HG973349-HG973421 individual/non_rep_top_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466755_1.fastq RNAseqData_E-MTAB-2430/ERR466755_2.fastq HG973349-HG973421 individual/non_rep_top_2
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2430/ERR466761_1.fastq RNAseqData_E-MTAB-2430/ERR466761_2.fastq HG973349-HG973421 individual/non_rep_top_3
