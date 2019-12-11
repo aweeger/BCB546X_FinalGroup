@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Copy/paste this job script into a text file and submit with the command:
+#    sbatch thefilename
+# job standard output will go to the file slurm-%j.out (where %j is the job ID)
+
+#SBATCH --time=12:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=16   # 16 processor core(s) per node
+#SBATCH --job-name="2431_2"
+#SBATCH --mail-user=rfortune@iastate.edu   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+
+module load rsem/1.3.0-py2-r3.5-6w56sc6
+
+module load  python/3.8.0-k7w5uj4
+
+module load  bowtie2/2.3.4.1-py2-jl5zqym
+
+cd /ptmp/aweeger/BCB546X_FinalGroup
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466683_1.fastq RNAseqData_E-MTAB-2431/ERR466683_2.fastq HG973349-HG973421 individual/late_cleavage_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466679_1.fastq RNAseqData_E-MTAB-2431/ERR466679_2.fastq HG973349-HG973421 individual/late_cleavage_2
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466674_1.fastq RNAseqData_E-MTAB-2431/ERR466674_2.fastq HG973349-HG973421 individual/late_postinversion_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466677_1.fastq RNAseqData_E-MTAB-2431/ERR466677_2.fastq HG973349-HG973421 individual/late_preinversion_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466663_1.fastq RNAseqData_E-MTAB-2431/ERR466663_2.fastq HG973349-HG973421 individual/late_preinversion_2
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466681_1.fastq RNAseqData_E-MTAB-2431/ERR466681_2.fastq HG973349-HG973421 individual/late_vitellogenesis_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466671_1.fastq RNAseqData_E-MTAB-2431/ERR466671_2.fastq HG973349-HG973421 individual/late_vitellogenesis_2
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466665_1.fastq RNAseqData_E-MTAB-2431/ERR466665_2.fastq HG973349-HG973421 individual/late_vitellogenesis_3
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466678_1.fastq RNAseqData_E-MTAB-2431/ERR466678_2.fastq HG973349-HG973421 individual/late_vitellogenesis_4
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466676_1.fastq RNAseqData_E-MTAB-2431/ERR466676_2.fastq HG973349-HG973421 individual/swimming_larvae_1
+
+rsem-calculate-expression -p 16 --bowtie2 --paired-end RNAseqData_E-MTAB-2431/ERR466662_1.fastq RNAseqData_E-MTAB-2431/ERR466662_2.fastq HG973349-HG973421 individual/swimming_larvae_2
