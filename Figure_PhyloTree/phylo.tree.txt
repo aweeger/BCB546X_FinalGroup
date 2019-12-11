@@ -1,0 +1,43 @@
+
+
+#Downloaded MrBayes v.3.2.7 package (used on a local computer of a group member).
+
+#Note: Ensure aligned .nex file is located in same folder as MrBayes to ensure file is located without relative path information.
+
+
+>Load mrbayes
+>execute Sponge_Mrbayes.nex
+  
+>prset aamodel =[fixed(LG)] #change model to LG based on ProTest results
+# Protest results  Model................................ : LG
+                   Number of parameters............... : 143 (0 + 143 branch length estimates)
+                   -lnL................................ = 211196.10
+                    (seconds))
+>prset #verify model change
+
+>log start _Sponge_Mrbayes.txt_ # start log file
+
+>lset nst=6 rates=invgamma ngammacat=4; # Set the model and priors
+
+>  mcmc ngen=500000 samplefreq=100 printfreq=100 diagnfreq=1000 #lt start the Markov chain Monte
+Carlo simulation. It will also ensure that you get at least 200 samples from the
+posterior probability distribution, and that diagnostics are calculated every 1,000
+generations. 
+
+
+> sump filename=Sponge_Mrbayes_op # To summarize the parameter values using the same burn-in as
+the diagnostics in the mcmc command. The program will output a table with
+summaries of the samples of the substitution model parameters, including the
+mean, mode, and 95 % credibility interval.
+
+>sumt filename=Sponge_mrbayes_op #program will output a cladogram with the posterior
+probabilities for each split and a phylogram with mean branch lengths. Both
+trees will also be printed to a file that can be read by FigTree (Rambaut and
+Drummond, 2012) and other tree-drawing programs, such as TreeView (Page,
+1996) and Mesquite 
+
+
+
+
+
+
