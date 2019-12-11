@@ -28,4 +28,4 @@ The main directories are as follows
       * **_heatmap.jpg_**: heatmap of gene expression level in all developmental stages.
 
   
-[Created and edited by E. Glynne, A. Weeger, R. Fortune, H. Liu ]
+[Created and edited by E. Glynne, A. Weeger, R. Fortune, H. Liu, A. Anilkumar ]
