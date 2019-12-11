@@ -14,8 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install("DESeq")
-BiocManager::install("tximport")
+#BiocManager::install("DESeq")
+#BiocManager::install("tximport")
+#install.packages("ggplot2")
+#install.packages("reshape2")
+#install.packages("RColorBrewer")
 library(DESeq)
 library(tximport)
 library("ggplot2")
@@ -67,7 +70,7 @@ count<-counts(cds, normalized=TRUE)
 #Differential expressed gene
 
 ```{r}
-# statistical significance of gene expression
+# statistical significance of gene expression in apical region
 resm = nbinomTest(cds, "nonreproductive top", "nonreproductive middle")
 resb = nbinomTest( cds, "nonreproductive top", "nonreproductive bottom" )
 
